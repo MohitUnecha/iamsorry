@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <style>
+        /* General Styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3e5f5;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        h1, h2 {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease forwards;
+        }
+
+        h1 {
+            color: #d32f2f;
+            font-size: 3em;
+            margin: 10px;
+            animation-delay: 1s;
+        }
+
+        h2 {
+            color: #757575;
+            font-size: 1.5em;
+            margin: 10px;
+            animation-delay: 2s;
+        }
+
+        /* Bouquet Image Styling */
+        .bouquet {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        /* Floating Heart Styling */
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #ff4081;
+            transform: rotate(-45deg);
+            top: 50%;
+            left: 50%;
+            opacity: 0.8;
+            animation: floatUp 3s ease-in infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #ff4081;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -25px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 25px;
+        }
+
+        /* Keyframes for Animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(0.5); opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts for Background Animation -->
+    <div class="heart" style="left: 20%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 50%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 80%; animation-delay: 2s;"></div>
+
+    <!-- Bouquet Image and Message -->
+    <img src="https://www.floweramacolumbus.com/assets/inc/timthumb.php?src=https://77f90f009124773797b9-5620af73f17ec7d8bbaefba0c79a0c2e.ssl.cf2.rackcdn.com/Whitelilybouquet.jpg&w=800&h=800&a=c" alt="Bouquet of flowers" class="bouquet">  
+    <h1>I Love You</h1>
+    <h2>I'm Sorry</h2>
+
+    <!-- Background Music (Downloaded Audio from Computer) -->
+    <audio autoplay loop>
+        <!-- Local file path to your audio file -->
+        <source src="background-music.mp3" type="audio/mp3">
+        <source src="background-music.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
